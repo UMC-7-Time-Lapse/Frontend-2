@@ -12,20 +12,23 @@ struct LoginView: View {
 
     var body: some View {
         VStack(spacing: 50) {
-            VStack(alignment: .leading) {
-                HStack {
-                    Text("5초")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hex: "#2E83F2"))
-                    Text("만에")
+            VStack(spacing: 40) {
+                Image("logo")
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("5초")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(hex: "#2E83F2"))
+                        Text("만에")
+                            .font(.title)
+                    }
+                    Text("타임캡슐을 만들어 봐요")
                         .font(.title)
                 }
-                Text("타임캡슐을 만들어 봐요")
-                    .font(.title)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading)
 
             Button(action: kakaoLogin) {
                 HStack {
