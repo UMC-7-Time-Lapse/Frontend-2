@@ -1,6 +1,4 @@
 import SwiftUI
-import KakaoSDKCommon
-import KakaoSDKAuth
 
 @main
 struct FrontendApp: App {
