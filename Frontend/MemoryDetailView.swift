@@ -1,6 +1,7 @@
 import SwiftUI
 import MapKit
 
+/// MemoryDetailView는 특정 메모리의 상세 정보를 표시하는 뷰입니다.
 struct MemoryDetailView: View {
     var memory: Memory
 
@@ -22,11 +23,11 @@ struct MemoryDetailView: View {
                 }
                 .frame(height: 300)
                 .tabViewStyle(PageTabViewStyle())
-
+                
                 Text(memory.text)
                     .font(.body)
                     .padding()
-
+                
                 Text("Date: \(memory.date.formatted(date: .long, time: .shortened))")
                     .font(.caption)
                     .padding([.leading, .trailing])
