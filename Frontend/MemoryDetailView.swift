@@ -59,6 +59,7 @@ struct MemoryDetailView: View {
                     .padding([.leading, .trailing])
             }
             .navigationTitle("\(cityName)")
+            .navigationBarBackButtonHidden(true)
             .onAppear {
                 fetchCityName(for: memory.location)
             }
