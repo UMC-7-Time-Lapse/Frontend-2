@@ -1,11 +1,7 @@
 import Foundation
 
 struct APIConstants {
-    static let baseURL = "https://your-api-url.com"
-    
-    struct Auth {
-        static let kakaoLogin = baseURL + "/api/auth/kakao"
-    }
+    static let baseURL = "http://13.124.148.200:8080/"
     
     struct Post {
         static let create = baseURL + "/posts"
