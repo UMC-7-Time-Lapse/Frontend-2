@@ -1,7 +1,7 @@
 import SwiftUI
 import MapKit
 import PhotosUI
-
+/*
 /// GeoContent 뷰는 사용자가 현재 위치를 기반으로 타임 캡슐을 생성하고, 사진 및 동영상을 선택할 수 있도록 하는 UI를 제공합니다.
 struct GeoContent: View {
     /// Geofencing 클래스의 인스턴스. 위치 업데이트 및 지오펜싱을 관리합니다.
@@ -103,3 +103,4 @@ struct GeoContent_Previews: PreviewProvider {
         GeoContent()
     }
 }
+*/
