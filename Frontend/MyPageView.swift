@@ -21,7 +21,7 @@ struct MyPageView: View {
             VStack {
                 HStack {
                     /// 사용자 프로필 사진
-                    Image(systemName: "person.circle")
+                    Image("tabProfil")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 70, height: 70)
@@ -30,7 +30,7 @@ struct MyPageView: View {
                         .padding(.trailing, 10)
 
                     /// 사용자 이름
-                    Text("사용자")
+                    Text("아요단")
                         .font(.title2)
                         .fontWeight(.bold)
                     

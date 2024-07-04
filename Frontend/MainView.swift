@@ -21,7 +21,7 @@ struct MainView: View {
                         /// "마이 페이지" 버튼
                         NavigationLink(destination: MyPageView(memories: $memories, locationManager: locationManager), isActive: $isMyPageViewPresented) {
                             /// 사용자 프로필 사진
-                            Image(systemName: "person.circle")
+                            Image("tabProfil")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 80, height: 80)
@@ -30,7 +30,7 @@ struct MainView: View {
                         }
                         Spacer()
                         /// 사용자 이름
-                        Text("사용자")
+                        Text("아요단")
                             .font(.title2)
                             .fontWeight(.bold)
                         Spacer()
@@ -73,12 +73,12 @@ struct MainView: View {
                             center: userLocation,
                             span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
                         )))
-                        .frame(height: 200)
+                        .frame(height: 440)
                         .cornerRadius(10)
                         //.padding()
                     } else {
                         ProgressView("Loading map...")
-                            .frame(height: 200)
+                            .frame(height: 440)
                             //.padding()
                     }
                 }
