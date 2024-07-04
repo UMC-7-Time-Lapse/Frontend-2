@@ -16,26 +16,29 @@ struct MainView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 0) {
-                    /// 사용자 프로필 사진
-                    Image(systemName: "person.circle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                        .overlay(Circle().stroke(Color.gray, lineWidth: 2))
-
-                    Spacer()
-
-                    /// 사용자 이름
-                    Text("사용자")
-                        .font(.title2)
-                        .fontWeight(.bold)
-
-                    HStack(spacing: 0) {
+                    VStack(spacing: 0) {
                         Spacer()
                         /// "마이 페이지" 버튼
                         NavigationLink(destination: MyPageView(memories: $memories, locationManager: locationManager), isActive: $isMyPageViewPresented) {
-                            Text("마이 페이지")
+                            /// 사용자 프로필 사진
+                            Image(systemName: "person.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 80, height: 80)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                        }
+                        Spacer()
+                        /// 사용자 이름
+                        Text("사용자")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        Spacer()
+                        /// "추억 만들기" 버튼
+                        Button(action: {
+                            isPickerPresented = true
+                        }) {
+                            Text("추억 쌓기")
                                 .font(.title3)
                                 .padding()
                                 .frame(width: 140, height: 50)
@@ -43,24 +46,9 @@ struct MainView: View {
                                 .foregroundColor(.blue)
                                 .cornerRadius(10)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
+                                    RoundedRectangle(cornerRadius: 30)
                                         .stroke(Color.blue, lineWidth: 1)
                                 )
-                                .padding(.vertical)
-                        }
-                        Spacer()
-                        Spacer()
-                        /// "추억 만들기" 버튼
-                        Button(action: {
-                            isPickerPresented = true
-                        }) {
-                            Text("추억 만들기")
-                                .font(.title3)
-                                .padding()
-                                .frame(width: 142, height: 52)
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
                                 .padding(.vertical)
                         }
                         .photosPicker(isPresented: $isPickerPresented, selection: $selectedItems, matching: .any(of: [.images, .videos]))
@@ -87,11 +75,11 @@ struct MainView: View {
                         )))
                         .frame(height: 200)
                         .cornerRadius(10)
-                        .padding()
+                        //.padding()
                     } else {
                         ProgressView("Loading map...")
                             .frame(height: 200)
-                            .padding()
+                            //.padding()
                     }
                 }
                 .padding(.top, 30)
