@@ -12,6 +12,9 @@
 		373938722C369FCB000A7D67 /* WriteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938712C369FCB000A7D67 /* WriteContentView.swift */; };
 		373938742C36A5F2000A7D67 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938732C36A5F2000A7D67 /* MyPageView.swift */; };
 		9F75969F2C36AC0C00B2E0DE /* PictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F75969E2C36AC0C00B2E0DE /* PictureView.swift */; };
+		373938782C36B56B000A7D67 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938772C36B56B000A7D67 /* Memory.swift */; };
+		3739387A2C36BC46000A7D67 /* MemoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938792C36BC46000A7D67 /* MemoryDetailView.swift */; };
+		3739387C2C36C4DF000A7D67 /* UserLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739387B2C36C4DF000A7D67 /* UserLocationManager.swift */; };
 		9F9115232C36A45C003C595F /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9115222C36A45C003C595F /* IntroView.swift */; };
 		9F9115252C36A550003C595F /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9115242C36A550003C595F /* AlarmView.swift */; };
 		9FAFC5E32C367303007C59E3 /* FrontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFC5E22C367303007C59E3 /* FrontendApp.swift */; };
@@ -42,6 +45,9 @@
 		373938712C369FCB000A7D67 /* WriteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentView.swift; sourceTree = "<group>"; };
 		373938732C36A5F2000A7D67 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		9F75969E2C36AC0C00B2E0DE /* PictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureView.swift; sourceTree = "<group>"; };
+		373938772C36B56B000A7D67 /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		373938792C36BC46000A7D67 /* MemoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailView.swift; sourceTree = "<group>"; };
+		3739387B2C36C4DF000A7D67 /* UserLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationManager.swift; sourceTree = "<group>"; };
 		9F9115222C36A45C003C595F /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		9F9115242C36A550003C595F /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		9FAFC5DF2C367303007C59E3 /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,16 +110,19 @@
 				9FAFC5E42C367303007C59E3 /* ContentView.swift */,
 				9F9115222C36A45C003C595F /* IntroView.swift */,
 				9FAFC5F32C367703007C59E3 /* LoginView.swift */,
-				9FE76C6B2C36853800B26714 /* MainView.swift */,
 				9FAFC60F2C367B4D007C59E3 /* MyAppDelegate.swift */,
 				9F9115242C36A550003C595F /* AlarmView.swift */,
 				9F75969E2C36AC0C00B2E0DE /* PictureView.swift */,
 				9FAFC5E62C367304007C59E3 /* Assets.xcassets */,
 				9FAFC5E82C367304007C59E3 /* Preview Content */,
+				9FE76C6B2C36853800B26714 /* MainView.swift */,
 				3739386D2C369F99000A7D67 /* Geofencing.swift */,
 				3739386F2C369FAE000A7D67 /* GeoContent.swift */,
+				373938772C36B56B000A7D67 /* Memory.swift */,
 				373938712C369FCB000A7D67 /* WriteContentView.swift */,
+				3739387B2C36C4DF000A7D67 /* UserLocationManager.swift */,
 				373938732C36A5F2000A7D67 /* MyPageView.swift */,
+				373938792C36BC46000A7D67 /* MemoryDetailView.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -219,11 +228,14 @@
 				9F75969F2C36AC0C00B2E0DE /* PictureView.swift in Sources */,
 				3739386E2C369F99000A7D67 /* Geofencing.swift in Sources */,
 				373938722C369FCB000A7D67 /* WriteContentView.swift in Sources */,
+				3739387C2C36C4DF000A7D67 /* UserLocationManager.swift in Sources */,
 				9FAFC5E32C367303007C59E3 /* FrontendApp.swift in Sources */,
+				3739387A2C36BC46000A7D67 /* MemoryDetailView.swift in Sources */,
 				9FAFC6102C367B4D007C59E3 /* MyAppDelegate.swift in Sources */,
 				373938742C36A5F2000A7D67 /* MyPageView.swift in Sources */,
 				9F9115252C36A550003C595F /* AlarmView.swift in Sources */,
 				9F9115232C36A45C003C595F /* IntroView.swift in Sources */,
+				373938782C36B56B000A7D67 /* Memory.swift in Sources */,
 				9FAFC5F42C367703007C59E3 /* LoginView.swift in Sources */,
 				9FAFC5F22C367585007C59E3 /* ColorExtentsion.swift in Sources */,
 			);
