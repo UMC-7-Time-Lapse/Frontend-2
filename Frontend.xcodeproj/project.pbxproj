@@ -36,6 +36,7 @@
 		9FAFC60B2C367837007C59E3 /* KakaoSDKTemplate in Frameworks */ = {isa = PBXBuildFile; productRef = 9FAFC60A2C367837007C59E3 /* KakaoSDKTemplate */; };
 		9FAFC60D2C367837007C59E3 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 9FAFC60C2C367837007C59E3 /* KakaoSDKUser */; };
 		9FAFC6102C367B4D007C59E3 /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFC60F2C367B4D007C59E3 /* MyAppDelegate.swift */; };
+		9FE2711F2C3723A2001DA53C /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE2711E2C3723A2001DA53C /* APIConstants.swift */; };
 		9FE76C6C2C36853800B26714 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE76C6B2C36853800B26714 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		9FAFC5F32C367703007C59E3 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9FAFC60E2C367943007C59E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9FAFC60F2C367B4D007C59E3 /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
+		9FE2711E2C3723A2001DA53C /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		9FE76C6B2C36853800B26714 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,8 @@
 				373938712C369FCB000A7D67 /* WriteContentView.swift */,
 				373938792C36BC46000A7D67 /* MemoryDetailView.swift */,
 				37CD11292C36D24A00558736 /* LocationManager.swift */,
+				9F7596A02C36CF9B00B2E0DE /* ErrorView.swift */,
+				9FE2711E2C3723A2001DA53C /* APIConstants.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -236,6 +240,7 @@
 				9F9115252C36A550003C595F /* AlarmView.swift in Sources */,
 				9F9115232C36A45C003C595F /* IntroView.swift in Sources */,
 				373938782C36B56B000A7D67 /* Memory.swift in Sources */,
+				9FE2711F2C3723A2001DA53C /* APIConstants.swift in Sources */,
 				9FAFC5F42C367703007C59E3 /* LoginView.swift in Sources */,
 				9FAFC5F22C367585007C59E3 /* ColorExtentsion.swift in Sources */,
 			);

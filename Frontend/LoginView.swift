@@ -18,7 +18,7 @@ struct LoginView: View {
                         Text("5초")
                             .font(.largeTitle)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(hex: "#2E83F2"))
+                            .foregroundColor(Color.blue)
                         Text("만에")
                             .font(.title)
                     }
@@ -37,7 +37,6 @@ struct LoginView: View {
                         .frame(height: 50)
                 }
                 .frame(width: UIScreen.main.bounds.width * 0.8)
-                .background(Color(hex: "#FEE500"))
                 .cornerRadius(10)
             }
             
@@ -95,6 +94,7 @@ struct LoginView: View {
                     print(oauthToken)
                     loginStatus = "로그인 성공"
                     fetchUserInfo()
+                    loginToServer(authorizationCode: oauthToken.accessToken)
                     isLoggedIn = true
                 }
             }
@@ -106,6 +106,7 @@ struct LoginView: View {
                     print(oauthToken)
                     loginStatus = "로그인 성공"
                     fetchUserInfo()
+                    loginToServer(authorizationCode: oauthToken.accessToken)
                     isLoggedIn = true
                 }
             }
@@ -125,6 +126,47 @@ struct LoginView: View {
             }
         }
     }
+    
+    func loginToServer(authorizationCode: String) {
+        guard let url = URL(string: APIConstants.Auth.kakaoLogin) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = ["authorizationCode": authorizationCode]
+        
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        } catch {
+            print("Failed to encode JSON")
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print("Network error: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(LoginResponse.self, from: data)
+                print("Server response: \(response)")
+                // 여기에서 accessToken, refreshToken 등을 처리합니다.
+                // 예를 들어 UserDefaults에 저장하거나 앱의 상태를 업데이트할 수 있습니다.
+                // 예: UserDefaults.standard.set(response.accessToken, forKey: "accessToken")
+            } catch {
+                print("Failed to decode JSON response")
+            }
+        }.resume()
+    }
+}
+
+struct LoginResponse: Codable {
+    let accessToken: String
+    let refreshToken: String
+    let grantType: String
+    let expiresIn: Int
 }
 
 #Preview {
