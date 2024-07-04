@@ -11,6 +11,8 @@
 		373938702C369FAE000A7D67 /* GeoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3739386F2C369FAE000A7D67 /* GeoContent.swift */; };
 		373938722C369FCB000A7D67 /* WriteContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938712C369FCB000A7D67 /* WriteContentView.swift */; };
 		373938742C36A5F2000A7D67 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373938732C36A5F2000A7D67 /* MyPageView.swift */; };
+		9F9115232C36A45C003C595F /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9115222C36A45C003C595F /* IntroView.swift */; };
+		9F9115252C36A550003C595F /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9115242C36A550003C595F /* AlarmView.swift */; };
 		9FAFC5E32C367303007C59E3 /* FrontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFC5E22C367303007C59E3 /* FrontendApp.swift */; };
 		9FAFC5E52C367303007C59E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAFC5E42C367303007C59E3 /* ContentView.swift */; };
 		9FAFC5E72C367304007C59E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAFC5E62C367304007C59E3 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 		3739386F2C369FAE000A7D67 /* GeoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoContent.swift; sourceTree = "<group>"; };
 		373938712C369FCB000A7D67 /* WriteContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteContentView.swift; sourceTree = "<group>"; };
 		373938732C36A5F2000A7D67 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		9F9115222C36A45C003C595F /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
+		9F9115242C36A550003C595F /* AlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		9FAFC5DF2C367303007C59E3 /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAFC5E22C367303007C59E3 /* FrontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontendApp.swift; sourceTree = "<group>"; };
 		9FAFC5E42C367303007C59E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,9 +100,12 @@
 				9FAFC5F12C367585007C59E3 /* ColorExtentsion.swift */,
 				9FAFC5E22C367303007C59E3 /* FrontendApp.swift */,
 				9FAFC5E42C367303007C59E3 /* ContentView.swift */,
+				9F9115222C36A45C003C595F /* IntroView.swift */,
 				9FAFC5F32C367703007C59E3 /* LoginView.swift */,
 				9FE76C6B2C36853800B26714 /* MainView.swift */,
 				9FAFC60F2C367B4D007C59E3 /* MyAppDelegate.swift */,
+				3739386F2C369FAE000A7D67 /* GeoContent.swift */,
+				9F9115242C36A550003C595F /* AlarmView.swift */,
 				9FAFC5E62C367304007C59E3 /* Assets.xcassets */,
 				9FAFC5E82C367304007C59E3 /* Preview Content */,
 				3739386D2C369F99000A7D67 /* Geofencing.swift */,
@@ -212,6 +219,8 @@
 				9FAFC5E32C367303007C59E3 /* FrontendApp.swift in Sources */,
 				9FAFC6102C367B4D007C59E3 /* MyAppDelegate.swift in Sources */,
 				373938742C36A5F2000A7D67 /* MyPageView.swift in Sources */,
+				9F9115252C36A550003C595F /* AlarmView.swift in Sources */,
+				9F9115232C36A45C003C595F /* IntroView.swift in Sources */,
 				9FAFC5F42C367703007C59E3 /* LoginView.swift in Sources */,
 				9FAFC5F22C367585007C59E3 /* ColorExtentsion.swift in Sources */,
 			);
