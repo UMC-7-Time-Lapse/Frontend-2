@@ -16,6 +16,9 @@ struct WriteContentView: View {
     /// 저장 후 호출되는 클로저.
     var onSave: (Memory) -> Void
 
+    /// 현재 위치를 저장하는 변수.
+    @State private var currentLocation: CLLocationCoordinate2D?
+
     var body: some View {
         VStack {
             /// 선택된 각 사진/동영상을 가로로 넘길 수 있는 TabView로 표시.
@@ -67,7 +70,7 @@ struct WriteContentView: View {
         .padding()
         .navigationBarTitle("글 작성", displayMode: .inline)
         .onAppear {
-            geofencing.requestGeofenceLocation()
+            geofencing.requestLocation()
         }
     }
 }
