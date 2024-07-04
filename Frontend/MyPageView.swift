@@ -73,6 +73,9 @@ struct MyPageView: View {
                 .padding()
             }
         }
+        .onAppear {
+            setupGeofences()
+        }
     }
     
     private func fetchCityName(for location: CLLocationCoordinate2D, completion: @escaping (String) -> Void) {
@@ -89,6 +92,12 @@ struct MyPageView: View {
             } else {
                 completion("알 수 없는 위치")
             }
+        }
+    }
+
+    private func setupGeofences() {
+        for memory in memories {
+            locationManager.startMonitoringRegion(for: memory)
         }
     }
 }
