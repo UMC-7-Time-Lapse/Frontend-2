@@ -35,18 +35,21 @@ struct MyPageView: View {
                             if distance <= 100 {
                                 NavigationLink(destination: MemoryDetailView(memory: memory)) {
                                     MemoryThumbnailView(memory: memory)
+                                        .cornerRadius(20)
                                 }
                             } else {
                                 MemoryThumbnailView(memory: memory)
+                                    .cornerRadius(20)
                                     .overlay(
                                         Color.black.opacity(0.6)
                                             .cornerRadius(20)
                                             .overlay(
-                                                Text("위치가 다릅니다.")
+                                                Image(systemName: "lock.fill")
                                                     .foregroundColor(.white)
-                                                    .font(.caption)
+                                                    .font(.largeTitle)
                                             )
                                     )
+                                    
                             }
                         } else {
                             MemoryThumbnailView(memory: memory)
