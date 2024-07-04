@@ -4,8 +4,11 @@ import CoreLocation
 
 /// WriteContentView 뷰는 사용자가 선택한 사진/동영상을 표시하고, 글을 작성할 수 있도록 하는 UI를 제공합니다.
 struct WriteContentView: View {
-    /// 사용자가 작성한 글을 저장하는 변수.
-    @State private var text: String = ""
+    /// 사용자가 작성한 제목을 저장하는 변수.
+    @State private var title: String = ""
+
+    /// 사용자가 작성한 내용을 저장하는 변수.
+    @State private var content: String = ""
 
     /// 사용자가 선택한 미디어 데이터를 저장하는 변수 배열.
     var selectedMediaData: [Data]
@@ -41,18 +44,25 @@ struct WriteContentView: View {
             .tabViewStyle(PageTabViewStyle())
             .frame(height: 220) // TabView 높이 설정
 
-            /// 사용자가 글을 작성할 수 있는 TextEditor.
-            TextEditor(text: $text)
+            /// 사용자가 제목을 작성할 수 있는 TextField.
+            TextField("제목을 입력하세요", text: $title)
                 .padding()
-                .border(Color.gray, width: 1)
-                .frame(height: 200)
+                .font(.title)
+                .background(Color.clear)
+
+            /// 사용자가 내용을 작성할 수 있는 TextField.
+            TextField("내용을 입력하세요", text: $content)
+                .padding()
+                .font(.body)
+                .background(Color.clear)
 
             /// 사용자가 글을 저장하고 현재 위치에 지오펜싱을 설정하는 '생성' 버튼.
             Button(action: {
                 geofencing.setupGeofenceAtCurrentLocation()
                 if let location = geofencing.userLocation {
                     let memory = Memory(
-                        text: text,
+                        title: title,
+                        content: content,
                         mediaData: selectedMediaData,
                         location: location,
                         date: Date()

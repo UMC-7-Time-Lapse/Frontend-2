@@ -85,9 +85,6 @@ struct MemoryThumbnailView: View {
             }
             .frame(height: UIScreen.main.bounds.width / 1.5 - 20)
             .tabViewStyle(PageTabViewStyle())
-
-            Text(memory.text)
-                .padding([.leading, .trailing, .bottom])
         }
     }
 }
