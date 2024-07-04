@@ -1,24 +1,30 @@
-import CoreLocation
 import Foundation
-import SwiftUI
+import CoreLocation
 
 class UserLocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private var locationManager = CLLocationManager()
     @Published var userLocation: CLLocationCoordinate2D?
-
+    private var locationManager: CLLocationManager
+    
     override init() {
+        locationManager = CLLocationManager()
         super.init()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
+    }
+    
+    func requestUserLocation() {
         locationManager.startUpdatingLocation()
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        userLocation = location.coordinate
+        if let location = locations.last {
+            DispatchQueue.main.async {
+                self.userLocation = location.coordinate
+            }
+        }
     }
-
-    func requestUserLocation() {
-        locationManager.requestLocation()
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to find user's location: \(error.localizedDescription)")
     }
 }
