@@ -4,7 +4,7 @@ import PhotosUI
 
 /// MainView는 사용자 프로필 사진, 사용자 이름, 그리고 "추억 만들기" 버튼과 "마이 페이지" 버튼을 포함하는 스크롤 가능한 메인 화면을 제공합니다.
 struct MainView: View {
-    @StateObject private var locationManager = LocationManager()
+    @StateObject private var locationManager = LocationManager() // LocationManager 인스턴스를 @StateObject로 선언
     @State private var isPickerPresented = false
     @State private var selectedItems: [PhotosPickerItem] = []
     @State private var selectedMediaData: [Data] = []
@@ -34,7 +34,7 @@ struct MainView: View {
                     HStack(spacing: 0) {
                         Spacer()
                         /// "마이 페이지" 버튼
-                        NavigationLink(destination: MyPageView(memories: $memories), isActive: $isMyPageViewPresented) {
+                        NavigationLink(destination: MyPageView(memories: $memories, locationManager: locationManager), isActive: $isMyPageViewPresented) {
                             Text("마이 페이지")
                                 .font(.title3)
                                 .padding()
@@ -115,23 +115,6 @@ struct MainView: View {
             }
             .navigationTitle("")
         }
-    }
-}
-
-class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-    private var locationManager = CLLocationManager()
-    @Published var userLocation: CLLocationCoordinate2D?
-
-    override init() {
-        super.init()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        userLocation = location.coordinate
     }
 }
 
