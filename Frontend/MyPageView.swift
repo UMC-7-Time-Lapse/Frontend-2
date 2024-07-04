@@ -5,6 +5,8 @@ import CoreLocation
 struct MyPageView: View {
     @Binding var memories: [Memory]
     @ObservedObject var locationManager: LocationManager
+    @State private var showAlert = false
+    @State private var selectedCityName: String = "알 수 없는 위치"
 
     var body: some View {
         VStack {
@@ -49,7 +51,19 @@ struct MyPageView: View {
                                                     .font(.largeTitle)
                                             )
                                     )
-                                    
+                                    .onTapGesture {
+                                        fetchCityName(for: memory.location) { cityName in
+                                            selectedCityName = cityName
+                                            showAlert = true
+                                        }
+                                    }
+                                    .alert(isPresented: $showAlert) {
+                                        Alert(
+                                            title: Text("접근 불가"),
+                                            message: Text("이 추억은 \(selectedCityName)에서 볼 수 있어요!"),
+                                            dismissButton: .default(Text("확인"))
+                                        )
+                                    }
                             }
                         } else {
                             MemoryThumbnailView(memory: memory)
@@ -57,6 +71,23 @@ struct MyPageView: View {
                     }
                 }
                 .padding()
+            }
+        }
+    }
+    
+    private func fetchCityName(for location: CLLocationCoordinate2D, completion: @escaping (String) -> Void) {
+        let geocoder = CLGeocoder()
+        let location = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error {
+                print("Failed to fetch city name: \(error.localizedDescription)")
+                completion("알 수 없는 위치")
+                return
+            }
+            if let placemark = placemarks?.first, let cityName = placemark.locality {
+                completion(cityName)
+            } else {
+                completion("알 수 없는 위치")
             }
         }
     }
