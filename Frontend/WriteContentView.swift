@@ -31,13 +31,13 @@ struct WriteContentView: View {
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 200)
+                            .frame(height: 300)
                     } else {
                         // 비디오 데이터를 표시하기 위한 로직 (여기서는 이미지로 대체)
                         Image(systemName: "video")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 200)
+                            .frame(height: 300)
                     }
                 }
             }
@@ -72,6 +72,7 @@ struct WriteContentView: View {
             }) {
                 Text("생성")
                     .padding()
+                    .frame(maxWidth: .infinity)
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)

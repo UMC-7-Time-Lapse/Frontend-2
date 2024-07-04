@@ -2,7 +2,6 @@ import SwiftUI
 import KakaoSDKAuth
 import KakaoSDKUser
 
-// 로그인 화면
 struct LoginView: View {
     @State private var userName: String = ""
     @State private var userMail: String = ""
@@ -48,8 +47,6 @@ struct LoginView: View {
                     .foregroundColor(.green)
             }
 
-            
-            // 공지사랑, 고객센터
             VStack {
                 HStack(alignment: .center) {
                     Text("공지 사항")
@@ -59,9 +56,7 @@ struct LoginView: View {
                 .font(.title3)
                 .foregroundColor(.gray)
             }
-            
-    
-            
+
             if !userName.isEmpty {
                 Text("Name: \(userName)")
                     .font(.headline)
@@ -100,7 +95,7 @@ struct LoginView: View {
                     print(oauthToken)
                     loginStatus = "로그인 성공"
                     fetchUserInfo()
-                    isLoggedIn = true // 로그인 성공 시 MainView로 이동
+                    isLoggedIn = true
                 }
             }
         } else {
@@ -111,7 +106,7 @@ struct LoginView: View {
                     print(oauthToken)
                     loginStatus = "로그인 성공"
                     fetchUserInfo()
-                    isLoggedIn = true // 로그인 성공 시 MainView로 이동
+                    isLoggedIn = true
                 }
             }
         }
@@ -131,14 +126,6 @@ struct LoginView: View {
         }
     }
 }
-
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
-
 
 #Preview {
     LoginView()
